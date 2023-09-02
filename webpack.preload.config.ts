@@ -1,5 +1,7 @@
 import type { Configuration } from 'webpack';
 
+import { BytenodeWebpackPlugin } from '@herberttn/bytenode-webpack-plugin';
+
 import { rules } from './webpack.shared.rules';
 import { plugins } from './webpack.shared.plugins';
 
@@ -14,7 +16,7 @@ const preloadConfig: Configuration = {
     devtoolModuleFilenameTemplate: '[absolute-resource-path]',
     filename: '[name].js',
   },
-  plugins,
+  plugins: [new BytenodeWebpackPlugin({ compileForElectron: true })],
   resolve: {
     extensions: ['.js', '.ts', '.jsx', '.tsx', '.css', '.json'],
   },

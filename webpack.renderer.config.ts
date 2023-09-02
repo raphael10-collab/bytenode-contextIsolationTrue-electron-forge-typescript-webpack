@@ -1,5 +1,7 @@
 import type { Configuration } from 'webpack';
 
+import { BytenodeWebpackPlugin } from '@herberttn/bytenode-webpack-plugin';
+
 import { rules } from './webpack.shared.rules';
 import { plugins } from './webpack.shared.plugins';
 
@@ -19,7 +21,7 @@ const rendererConfig: Configuration = {
   output: {
     devtoolModuleFilenameTemplate: '[absolute-resource-path]',
   },
-  plugins,
+  plugins: [new BytenodeWebpackPlugin({ compileForElectron: true })],
   resolve: {
     extensions: ['.js', '.ts', '.jsx', '.tsx', '.css']
   },

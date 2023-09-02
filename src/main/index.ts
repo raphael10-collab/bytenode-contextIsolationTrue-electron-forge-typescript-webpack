@@ -14,17 +14,16 @@ const createWindow = (): void => {
     height: 600,
     width: 800,
     webPreferences: {
-      contextIsolation: false,
-      nodeIntegration: true,
+      //contextIsolation: false,
+      //nodeIntegration: true,
       preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
 
-      //preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
-      //nodeIntegration: false,
-      //contextIsolation: true,
-      //nodeIntegrationInWorker: false,
-      //nodeIntegrationInSubFrames: false,
-      //webviewTag: true,
-      //webSecurity: true
+      nodeIntegration: false,
+      contextIsolation: true,
+      nodeIntegrationInWorker: false,
+      nodeIntegrationInSubFrames: false,
+      webviewTag: true,
+      webSecurity: true
 
     },
   });
