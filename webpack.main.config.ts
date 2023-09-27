@@ -2,6 +2,8 @@ import assert = require("assert");
 
 import type { Configuration } from 'webpack';
 
+import process from 'node:process';
+
 import { BytenodeWebpackPlugin } from '@herberttn/bytenode-webpack-plugin';
 
 import { rules } from './webpack.shared.rules';

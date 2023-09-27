@@ -14,16 +14,22 @@ const createWindow = (): void => {
     height: 600,
     width: 800,
     webPreferences: {
-      //contextIsolation: false,
-      //nodeIntegration: true,
+
+      // if you disable nodeIntegration you unable to use require
+      // sandboxed preload unable to use nodejs modules by default
+      // https://www.electronjs.org/docs/latest/tutorial/sandbox
+
+      contextIsolation: false,
+      nodeIntegration: true,
       preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
 
-      nodeIntegration: false,
-      contextIsolation: true,
-      nodeIntegrationInWorker: false,
-      nodeIntegrationInSubFrames: false,
-      webviewTag: true,
-      webSecurity: true
+      sandbox: false,
+      //nodeIntegration: false,
+      //contextIsolation: true,
+      //nodeIntegrationInWorker: false,
+      //nodeIntegrationInSubFrames: false,
+      //webviewTag: true,
+      //webSecurity: true
 
     },
   });

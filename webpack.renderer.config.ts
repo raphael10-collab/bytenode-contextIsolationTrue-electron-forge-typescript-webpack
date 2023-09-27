@@ -2,6 +2,8 @@ import type { Configuration } from 'webpack';
 
 import assert = require("assert");
 
+import process from 'node:process';
+
 import { BytenodeWebpackPlugin } from '@herberttn/bytenode-webpack-plugin';
 
 import { rules } from './webpack.shared.rules';
@@ -29,13 +31,12 @@ const rendererConfig: Configuration = {
     fallback: {
       'assert': require.resolve('assert'),
       'zlib': require.resolve('browserify-zlib'), 
-      'vm': require.resolve('vm-browserify'),
       'stream': require.resolve('stream-browserify'),
       'path': require.resolve('path-browserify'),
-      'fs': false
+      'fs': false,
+      'vm': false
     },
   },
-  //target: 'electron-renderer',
 };
 
 export {
