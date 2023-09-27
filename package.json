@@ -16,7 +16,12 @@
     "start": "npm run clean && electron-forge start"
   },
   "dependencies": {
-    "electron-squirrel-startup": "1.0.0"
+    "assert": "^2.1.0",
+    "browserify-zlib": "^0.2.0",
+    "electron-squirrel-startup": "1.0.0",
+    "path-browserify": "^1.0.1",
+    "stream-browserify": "^3.0.0",
+    "vm-browserify": "^1.1.2"
   },
   "devDependencies": {
     "@electron-forge/cli": "6.0.5",

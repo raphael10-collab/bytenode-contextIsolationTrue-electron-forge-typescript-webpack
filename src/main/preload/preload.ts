@@ -2,14 +2,14 @@ console.log('💃 hello from preload')
 
 // https://www.electronjs.org/docs/latest/tutorial/ipc
 
+import process from "node:process"
 
-const {
+import {
   contextBridge,
   ipcRenderer,
   shell,
   webFrame
-} = require("electron")
-
+} from "electron"
 
 
 export {}
